@@ -1,0 +1,13 @@
+-- 신선 이관PACKAGE 등록
+상품 호출 시 
+1) 이관정보확인
+2) 신선상품인지 확인
+3) 상품발주구분과 이관발주구분(PMRVD_RET_REG.RET_OD_TCODE) 비교
+4) 상품경로와 이관발주경로(RCV_PATH_CODE) 비교
+5) 상품센터와 이관발주센터 비교
+6) 협력회사 비교
+7) 1Row 초과이며, SKU_TCODE가 서로다른 상품이면
+8) PMRVD_RET_REG.SKU_TCODE == 0 && ( 
+    ( RET_OD_TCODE == '2' && RET_OD_TCODE != '9' ) 
+    또는 
+    ( RET_OD_TCODE == '3' && RET_OD_TCODE != '9' ) 
